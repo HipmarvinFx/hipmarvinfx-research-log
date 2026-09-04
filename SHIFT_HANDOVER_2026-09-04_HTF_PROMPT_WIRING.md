@@ -70,22 +70,83 @@ Evidence Packet, which does exist and is well-formed per
 `lib/engine/htf-evidence-packet.ts`) and Step 10 (AI prompt integration,
 which did not exist for HTF data and was broken for price data too).
 
-### A second undocumented gap surfaced during this trace
+### Correction (post-push): the Sept 1 handover was not missing
 
-`lib/evidence/adapters/yahoo.ts` and `lib/market-data/adapters/yahoo-fx-adapter.ts`
-both cite a "`SHIFT_HANDOVER_2026-09-01`" session in their header comments,
-describing real, specific, verified-sounding work (confirming
-`source-registry.ts`'s priority-sort behavior, confirming `EvidenceItem`'s
-real field shape, wiring Yahoo as priority-0 ahead of TwelveData). **No
-file by that name, or any September-dated handover, exists anywhere in the
-repo.** The work described is real and verified independently in this
-shift (the adapters exist, are registered, and Yahoo genuinely sorts
-before TwelveData in `source-registry.ts`) — so the session likely
-happened — but it left no continuity document, breaking this repo's own
-established handover convention for the first time. Flagged, not fixed:
-whoever did that work should retroactively write it up, or this shift's
-own writeup (this file) should be treated as the closest thing to a
-record of it that exists.
+The initial version of this document claimed no file documenting a
+1 September session existed anywhere in the repo. That was wrong, and is
+corrected here rather than silently edited, per this project's own
+convention of logging corrections instead of rewriting history quietly.
+
+`SHIFT_HANDOVER_2026-09-01_YahooEvidenceAdapter.md` does exist — it was
+committed to `hipmarvinfx-research-log` (`86b0089`), then correctly moved
+to `hipmarvinfx-docs` in the very next commit (`d04ee36`, "Remove
+misplaced file — belongs in hipmarvinfx-docs, not research-log") and
+re-committed there (`464683d`). It was never lost; it was misfiled once
+and then correctly relocated. The original claim in this document was
+wrong because only `hipmarvinfx` and `hipmarvinfx-research-log` were
+searched — `hipmarvinfx-docs` was not checked before concluding the file
+"didn't exist anywhere."
+
+Reading the real document surfaces one genuine correction to this
+session's own understanding, not just a filing-location fix: that
+session's own investigation found that `buildEvidencePacket()` is **not**
+upstream of what reaches the AI — it only feeds `parseAndValidate()`, a
+parallel, non-blocking fact-check step (confirmed by reading
+`app/api/cron/daily/route.ts` directly). The real data-supply integration
+point was `MarketDataRouter`'s provider list inside the cron routes
+themselves, which that session fixed directly — switching both
+`app/api/cron/daily/route.ts` and `weekly/route.ts` from
+`[twelve-data, yahoo-finance]` to `[yahoo-fx, twelve-data]` (commit
+`30a4a41`). That session also live-verified the real Yahoo endpoint
+(not just mocks) for the first time in this handover chain, found a real
+`close: null` edge case on in-progress candles and confirmed
+`isValidCandle()` already rejects it safely, confirmed native
+`interval=4h` is boundary-misaligned (concrete reason to keep deriving 4H
+from 1H, not just caution), fixed two real compile/type bugs (`packet`
+variable shadowing in the cron route, a missing re-export in
+`lib/parser/types.ts`), and left `tsc --noEmit` fully clean — the first
+clean type-check in the whole chain. That session's own final line:
+Step 3 (HTF structure engine) was "genuinely unblocked... the actual next
+unblocked step" — explicitly **not yet started** as of 1 September.
+
+### A second, larger documentation gap this correction surfaces
+
+If Step 3 wasn't started until after 1 September, but this shift
+(4 September) found Steps 3 through 9 (HTF structure, trend alignment,
+structural break, htf-composite orchestration, QMR phase, QM/QML
+refinement, and the evidence packet assembly) already fully built and
+wired into both pipelines — that work happened in the gap between the two
+dates, and **no standalone handover document exists for it** in either
+repo (confirmed: `git log --all --since="2026-09-01" --until="2026-09-04"`
+in `hipmarvinfx-docs` returns nothing for this work; only an unrelated
+"v7 automated macro evidence ingestion directive" commit).
+
+The work itself is not undocumented in the sense of being untraceable —
+`git log --diff-filter=A` against the app repo shows seven clean,
+sequential commits, each naming its brief step explicitly:
+
+```
+be35bdf feat(v7): add HTF structure engine (Step 3)
+6257c5e feat(v7): add Trend Alignment engine (Step 4)
+a30f6f3 feat(v7): add Structural Break engine (Step 5)
+93615dd Step 6: htf-composite.ts — orchestration layer
+72b4370 Step 7: qmr.ts — QMR phase classifier
+4eb1384 Step 8: qm.ts — QM/QML entry refinement classifier
+45b198d Step 9: htf-evidence-packet.ts — structured evidence packet
+```
+
+Commit messages carry real content — e.g. Step 8's message explicitly
+notes "no pattern geometry invented," consistent with this project's
+standing discipline elsewhere. But commit messages are not a substitute
+for the prose handover convention this project otherwise follows
+throughout: they don't say whether these engines were live-tested against
+real OHLC or only unit-tested, what design decisions were made and why,
+or what's still open going into Step 10 (which is what this session's own
+work — Section 3 below — ended up having to reconstruct from scratch by
+reading the code directly, rather than being handed a continuity note).
+Flagged for whoever built Steps 3–9: a retroactive handover covering that
+work would close this gap the same way this document aims to close the
+Step 9→10 one.
 
 ## 3. Fix applied this shift
 
@@ -184,7 +245,11 @@ before applying (no blind/ambiguous replacements).
    absent from every Standing Protocol version seen in this conversation
    so far) — likely lives in `STANDING_PROTOCOL_v7.md`, referenced by the
    Aug 31 shift but never itself pasted/read in full.
-4. Resolve or reconstruct the missing 1 September handover per Section 2.
+4. Write the retroactive handover for the Steps 3–9 commit chain
+   (`be35bdf` through `45b198d`) per Section 2 above — confirm from
+   whoever did that work (or from re-reading each engine file directly)
+   whether it was live-tested against real OHLC or only unit-tested, and
+   what, if anything, was deliberately left open going into Step 10.
 5. Only after Step 1 above is confirmed live: proceed to Step 11 (Parser
    v7 fields) — there is no point building a parser for AI output that
    hasn't yet been confirmed to contain the fields it would parse.
