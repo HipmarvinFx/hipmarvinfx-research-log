@@ -8,12 +8,12 @@
 **Impact Level:** Medium-High
 **Thematic Focus:** AUD repositioning after a mixed employment print; SNB hold with a dovish-leaning tone shift on FX-intervention language; GBP tone-dependent on Bailey's speech today
 **Overall Bias:** Mixed — no pair reached deterministic trade confirmation this week
-**Status:** draft
+**Status:** active
 **Macro Thesis:**
 Both of the week's hard-data catalysts have now released. AU Employment (Thu 24 Sep) beat forecast by roughly double (+39,500 vs +20,000), but the unemployment rate rose to 4.6% from 4.5% as participation surged to 67.1% — job quality was weak (full-time -6,300, all gains from part-time +45,800), and AUD was reported "little changed" on the release. This is a genuinely mixed print, not a clean bullish signal, despite the headline beat. SNB held at 0.00% exactly as forecast — a non-event on the rate itself — but eased its FX-intervention language, dropping prior "increased willingness to intervene" wording for standard phrasing, read by markets as a pivot toward inflation vigilance over currency defense; USD/CHF rose to ~0.827, its highest since late May. BOE Governor Bailey speaks today (Friday); no forecast exists for a speech, tone-dependent only. The RBA meets Monday 29 Sep with markets pricing ~95% odds of a hike to 4.6% — this falls just after this cycle's window but is the natural carryover catalyst into Week 36.
 
 **Analyst:** Elijah Agom / MarvinX
-**Published:** [PENDING — real publish date/time WAT not yet confirmed, do not import as final until supplied]
+**Published:** Friday, September 25, 2026, 10:56 WAT
 **Import Status Note:** Rebuilt this cycle from verified sources after the original WEEK35_WEEKLY_RESEARCH.md was found to contain fabricated data (AU Employment actual/forecast and unemployment figures did not match real released data; COT JPY weekly change was incorrect). All figures below are sourced from live web search (real-time news/data providers) and the live `/api/engine-snapshot` HTF/QMR engine output pulled during this session. Sections without a verified source are marked NOT SOURCED rather than filled with placeholder or invented values — do not populate them without real data.
 
 ---
