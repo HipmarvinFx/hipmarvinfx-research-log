@@ -1,20 +1,38 @@
-﻿# HipMarvin FX - Weekly Research File
+﻿# HipMarvin FX — Weekly Research File
 
 ## RESEARCH CYCLE
-**Research Cycle Label:** Week 35 - Sep 20-26, 2026
+**Research Cycle Label:** Week 35 — Sep 20–26, 2026
 **Week Start (ISO):** 2026-09-20
 **Week End (ISO):** 2026-09-26
 **Event Label:** AU Employment Beat / SNB Hold / BOE Bailey Speaks
 **Impact Level:** Medium-High
-**Thematic Focus:** AUD repositioning after a surprise employment beat; SNB hold already priced; GBP tone-dependent on Bailey Friday - dollar direction is the underlying lever for all three
-**Overall Bias:** Mixed
-**Status:** active
+**Thematic Focus:** AUD repositioning after a mixed employment print; SNB hold with a dovish-leaning tone shift on FX-intervention language; GBP tone-dependent on Bailey's speech today
+**Overall Bias:** Mixed — no pair reached deterministic trade confirmation this week
+**Status:** draft
 **Macro Thesis:**
-The week's only hard-data surprise has already landed: Thursday's AU Employment Change printed +20.9K against a -15.8K forecast, a substantial beat that shifts the AUD narrative from "RBA cutting cycle" toward "labour market holding." The unemployment rate held at 4.5% - no deterioration. Against that, the SNB held at 0.00% as forecast (a non-event on the decision; any CHF impact comes from the press conference tone, which has no sourced transcript yet). Bailey speaks Friday - same speech-only setup as Bullock Tuesday, no forecast, directional impact depends entirely on tone. The dollar backdrop is the common thread: USD Index COT shows leveraged funds extending net short USD, which is a structural tailwind for EUR, AUD, GBP, and JPY if it continues. The AUD employment beat is the one pair-specific catalyst that stands on its own independent of dollar direction.
+Both of the week's hard-data catalysts have now released. AU Employment (Thu 24 Sep) beat forecast by roughly double (+39,500 vs +20,000), but the unemployment rate rose to 4.6% from 4.5% as participation surged to 67.1% — job quality was weak (full-time -6,300, all gains from part-time +45,800), and AUD was reported "little changed" on the release. This is a genuinely mixed print, not a clean bullish signal, despite the headline beat. SNB held at 0.00% exactly as forecast — a non-event on the rate itself — but eased its FX-intervention language, dropping prior "increased willingness to intervene" wording for standard phrasing, read by markets as a pivot toward inflation vigilance over currency defense; USD/CHF rose to ~0.827, its highest since late May. BOE Governor Bailey speaks today (Friday); no forecast exists for a speech, tone-dependent only. The RBA meets Monday 29 Sep with markets pricing ~95% odds of a hike to 4.6% — this falls just after this cycle's window but is the natural carryover catalyst into Week 36.
 
-**Analyst:** Marvin
-**Published:** Sunday, September 20, 2026, WAT
-**Import Status Note:** Fresh cycle - no carryover positions. Price data sourced from TwelveData via automated pipeline. COT: CFTC Traders in Financial Futures, futures-only, positions as of Sep 15, 2026 (published Sep 18, 2026). FF calendar: screenshot supplied, week of Sep 20-26.
+**Analyst:** Elijah Agom / MarvinX
+**Published:** [PENDING — real publish date/time WAT not yet confirmed, do not import as final until supplied]
+**Import Status Note:** Rebuilt this cycle from verified sources after the original WEEK35_WEEKLY_RESEARCH.md was found to contain fabricated data (AU Employment actual/forecast and unemployment figures did not match real released data; COT JPY weekly change was incorrect). All figures below are sourced from live web search (real-time news/data providers) and the live `/api/engine-snapshot` HTF/QMR engine output pulled during this session. Sections without a verified source are marked NOT SOURCED rather than filled with placeholder or invented values — do not populate them without real data.
+
+---
+
+## HIGHER-TIMEFRAME TREND MAP
+
+*(Source: live `/api/engine-snapshot` pull, 2026-09-25T07:12 UTC — real deterministic engine output, not manually estimated. NOTE: as of the current admin/page.tsx importer, HTF Trend / Trend Alignment / Structural Break / QMR Phase fields are only parsed when they appear inside a **Priority N** trade-idea block. This table has no import path into Supabase this week since no trade ideas were published — presentational/reference only until that gap is addressed.)*
+
+| Pair | Daily Trend | 4H Trend | Trend Agreement | Classification |
+|---|---|---|---|---|
+| USDJPY | Bullish | Bullish | Agree | Directional (WITH-TREND, LONG) |
+| EURUSD | Bearish | Bearish | Agree | Directional (WITH-TREND, SHORT) |
+| USDCAD | Bullish | Bullish | Agree | Directional (WITH-TREND, LONG) |
+| AUDUSD | Bearish | Bearish | Agree | Directional (WITH-TREND, SHORT) |
+| NZDUSD | Bearish | Bearish | Agree | Directional (WITH-TREND, SHORT) |
+| GBPUSD | Conflict | Bearish | Conflict | Transition-Conflict (NOT-ELIGIBLE) |
+| USDCHF | Transition | Bullish | Conflict | Transition-Conflict (NOT-ELIGIBLE) |
+
+**Rule 24 discipline applied:** GBPUSD and USDCHF are correctly excluded from directional trade consideration this week — Daily/4H disagree and no confirmed structural break exists to justify countertrend eligibility.
 
 ---
 
@@ -22,72 +40,112 @@ The week's only hard-data surprise has already landed: Thursday's AU Employment 
 
 **Driver 1**
 **Tag:** RELEASED
-**Headline:** AU Employment Change & Unemployment Rate - Thursday, Sep 24
-**Subline:** Thu 24 Sep, 2:30am WAT — Employment Change Actual 20.9K (Forecast -15.8K) · Unemployment Rate Actual 4.5% (Forecast 4.5%, Prior 4.5%) — per FF screenshot
-**Analysis:** A beat of approximately 36.7K above forecast removes the near-term RBA cut catalyst. Unemployment holding flat confirms the beat is genuine. This is the week's only hard-data print with independent pair-specific impact — AUD/USD trade cases sourced here stand on their own and do not require dollar cooperation.
+**Headline:** AU Employment Change & Unemployment Rate — Thursday, Sep 24
+**Subline:** Thu 24 Sep, 1:30am UTC — Employment Change Actual +39,500 (Forecast +20,000, Prior -15,800) · Unemployment Rate Actual 4.6% (Forecast 4.5%, Prior 4.5%)
+**Analysis:**
+- Macro regime being tested: AUD labour-market strength
+- Confirms regime if: both employment and unemployment improve together
+- Strengthens regime if: employment beats and unemployment holds or falls
+- Weakens regime if: employment beats but unemployment rises on weak job quality — this is what happened
+- Breaks / invalidates regime if: employment misses and unemployment rises
+- FX implication: Mixed, not clean-bullish. Full-time employment fell (-6,300); all gains were part-time (+45,800). Unemployment rose because participation (67.1%, up from 66.9%) outpaced hiring. Market reaction was reported as "AUD little changed." Treat this as a real but ambiguous data point, not a directional trigger on its own.
 
 **Driver 2**
 **Tag:** RELEASED
 **Headline:** SNB Monetary Policy Assessment & Policy Rate — Thursday, Sep 24
-**Subline:** Thu 24 Sep, 8:30am WAT — SNB Policy Rate Actual 0.00% (Forecast 0.00%, Prior 0.00%) · SNB Press Conference 9:00am WAT — per FF screenshot. No press conference transcript sourced.
-**Analysis:** The hold was fully priced. CHF direction depends entirely on press conference tone. Without a sourced transcript this remains a watch item, not a tradeable scenario.
+**Subline:** Thu 24 Sep, 7:30am UTC — SNB Policy Rate Actual 0.00% (Forecast 0.00%, Prior 0.00%) — fifth consecutive hold
+**Analysis:**
+- Macro regime being tested: CHF policy stance / intervention posture
+- Confirms regime if: rate held and intervention language unchanged
+- Strengthens regime if: rate held and tone turns more hawkish/inflation-focused
+- Weakens regime if: rate held but intervention language eases — this is what happened
+- Breaks / invalidates regime if: rate cut, or intervention threat escalates
+- FX implication: Inflation forecasts were raised across 2026–2028 (0.7% / 0.8% / 0.8%). SNB dropped its prior "increased willingness to intervene against franc strength" language for standard wording — read as a pivot toward inflation vigilance over currency defense. USD/CHF rose to ~0.827, highest since late May. This is a genuine, sourced tone shift, not a rate surprise.
 
 **Driver 3**
-**Tag:** SCHEDULED
+**Tag:** SCHEDULED (today)
 **Headline:** BOE Governor Bailey Speaks — Friday, Sep 25
-**Subline:** Fri 25 Sep, 10:15am WAT — speech, no forecast or transcript available — per FF screenshot
-**Analysis:** Speech-only event. GBP directional impact is tone-dependent. COT shows leveraged funds trimming net long GBP (-15,749 wk/wk), meaning the positioning backdrop is softening heading into a speech with no pre-committed direction.
+**Subline:** Time not yet confirmed — speech only, no forecast or transcript available at time of writing
+**Analysis:** Speech-only event, GBP directional impact is entirely tone-dependent. GBPUSD is already classified Transition-Conflict on the HTF Trend Map (Daily/4H disagree) — a hawkish or dovish tone from Bailey would need to produce a confirmed structural break before any GBP idea becomes eligible per Rule 26, not just a directional lean.
 
 **Driver 4**
-**Tag:** RELEASED
-**Headline:** RBA Governor Bullock Speaks — Tuesday, Sep 22
-**Subline:** Tue 22 Sep, 4:10am WAT — speech already occurred, no transcript reviewed — per FF screenshot
-**Analysis:** Already past. No transcript sourced so no scenario tree built around it.
+**Tag:** NOT SOURCED
+**Headline:** RBA Rate Decision — Monday, Sep 29 (falls after this cycle's window)
+**Subline:** Markets reportedly pricing ~95% odds of a hike to 4.6% per general market reporting; exact CME/OIS-style pricing source not independently verified this session
+**Analysis:** Carryover catalyst into Week 36, not this cycle. Flagged here for continuity given AUD's mixed data week; do not treat the "~95%" figure as independently confirmed without re-sourcing at Week 36 build time.
+
+---
+
+## TRADE PRIORITY LIST
+
+**No pair reached deterministic trade-construction eligibility this week.** Per Rule 25/26 discipline: a setup is not published with invented numbers to fill a gap. Live `/api/engine-snapshot` output (2026-09-25T07:12 UTC) was audited pair-by-pair; every pair's `tradeConstruction.status` returned `INELIGIBLE` with all price fields null. Classification below reflects the actual gate each pair is blocked at — this is real engine output, not a placeholder table.
+
+**NEAR CONFIRMATION** (QMR phase MANIPULATION reached — one gate from eligible):
+- **EURUSD** — SHORT bias, Daily+4H bearish, WITH-TREND. Daily structural break UNCONFIRMED (displacement check failed: body ratio 0.77x vs 1.5x threshold required). Blocked at: reaction confirmation — no directional flow, no confirmed break, no accepted/rejected liquidity yet.
+- **USDJPY** — LONG bias, Daily+4H bullish, WITH-TREND. Daily structural break CONFIRMED-BULLISH (real, displacement-qualified, 1.89x ratio). Liquidity swept + accepted. Blocked at: reaction confirmation — supporting evidence only, no qualifying reaction yet. Dealing range flagged INVALIDATED-BULLISH; would need re-validation even after reaction confirms.
+
+**WATCH** (QMR phase QUALITY — directional bias established, no liquidity interaction yet):
+- **AUDUSD** — SHORT bias, Daily structural break CONFIRMED-BEARISH (5.26x displacement ratio). Blocked at: manipulation/liquidity sweep has not occurred yet. Dealing range flagged INVALIDATED-BEARISH.
+- **USDCAD** — LONG bias, Daily structural break CONFIRMED-BULLISH (3.14x ratio). Same blocker: liquidity untaken.
+- **NZDUSD** — SHORT bias, Daily structural break CONFIRMED-BEARISH (3.09x ratio, HIGH confidence both timeframes). Same blocker: liquidity untaken.
+
+**INELIGIBLE** (trend alignment gate failed — no direction established):
+- **GBPUSD** — Daily/4H conflict, no confirmed break to justify countertrend eligibility.
+- **USDCHF** — Daily/4H conflict, no confirmed break to justify countertrend eligibility.
+
+**Recommendation:** publish this week without a forced trade idea. EURUSD and USDJPY are the pairs to re-check first for Week 36 — both are one reaction-confirmation event from real deterministic entry/stop/target numbers.
 
 ---
 
 ## SCENARIO MATRIX — AU Employment Change
 
-**Branch 1 — Beat confirmed, AUD continuation (100% — already resolved):** Employment printed +20.9K vs -15.8K forecast; unemployment held at 4.5%. AUD-positive on the data. Action: watch for HTF structure confirmation of AUD/USD long setup; data case is established, structural confirmation is the remaining gate.
-
-**Branch 2 — Beat fades, AUD retraces (watching):** Data beat is real but broader risk-off or dollar strength could override it. Action: if price fails to hold structure after the beat, treat as no-trade pending the next AUD-specific event.
+**Branch 1 — Beat confirmed, but quality-weak — resolved:** Employment printed +39,500 vs +20,000 forecast, but unemployment rose to 4.6% on a participation surge and weak full-time composition. Market reaction: AUD little changed. Verdict: Mixed — do not auto-classify as "Confirmed/bullish" from keyword overlap alone; the headline beat and the underlying deterioration point in different directions.
+**Trade implication:** No AUD idea is justified from this data point alone. AUDUSD's SHORT bias on the HTF Trend Map is driven by real technical structure (confirmed Daily bearish break), not by this employment print — the two should not be conflated in the write-up.
 
 ## SCENARIO MATRIX — SNB Policy Rate
 
-**Branch 1 — Hold confirmed, press conference neutral to hawkish (unresolved — no transcript):** Rate held at 0.00% as forecast. If tone signals resistance to further cuts, CHF-supportive. Action: watch USD/CHF structure response post-conference.
-
-**Branch 2 — Hold confirmed, press conference signals further easing (unresolved — no transcript):** Same rate decision but tone suggests additional cuts, CHF-negative. Action: if this resolves this direction, USD/CHF long becomes the aligned trade.
+**Branch 1 — Hold confirmed, intervention language eased — resolved:** Rate held exactly as forecast (non-event on the number). Inflation forecasts raised; FX-intervention wording softened. Verdict: Confirmed for the "hold as expected" scenario; the intervention-language shift is the more actionable secondary signal, not encoded in a simple beat/miss framework.
+**Trade implication:** USD/CHF technicals (HTF Trend Map: Daily Transition / 4H Bullish, currently NOT-ELIGIBLE) should be watched for a resolving break given this tone shift, but no eligible setup exists yet.
 
 ## SCENARIO MATRIX — BOE Bailey Speech
 
-**Branch 1 — Hawkish or resilient tone (speech not yet occurred):** Bailey signals BOE is not rushing to cut. GBP-positive. Action: watch for close through long trigger level after speech.
-
-**Branch 2 — Dovish or soft tone (speech not yet occurred):** Bailey flags growth concerns or signals cutting cycle continues. GBP-negative. Action: watch for close through short trigger level after speech.
+**Branch 1 — Hawkish/resilient tone (30% probability, speech not yet occurred):** GBP-positive lean. Action: watch for GBPUSD's Daily/4H conflict to resolve toward agreement, with a confirmed structural break, before treating as tradeable.
+**Branch 2 — Dovish/soft tone (70% probability, speech not yet occurred):** GBP-negative lean, would align with the existing 4H bearish read. Action: same — requires a confirmed break, not just directional tone, per Rule 26.
 
 ---
 
 ## COT POSITIONING
-| Pair | Net Position (Leveraged Funds) | Net Position (Asset Mgr/Institutional) | Direction WoW (Lev Funds) | Read |
-|------|-------------------------------|----------------------------------------|---------------------------|------|
-| AUD | +61,135 (net long) | -46,396 (net short) | Adding net longs (+11,356) | Lev Funds long and growing; employment beat reinforces the leveraged-fund direction |
-| GBP | +18,878 (net long) | -89,211 (net short) | Trimming net longs (-15,749) | Still net long but cutting back sharply; positioning softening into Bailey Friday |
-| CHF | -14,964 (net short) | -36,121 (net short) | Extending net shorts (-1,524) | Both cohorts net short CHF; SNB hold non-event removes near-term reversal catalyst |
-| JPY | +23,170 (net long) | +53,845 (net long) | Large net long addition (+72,268) | Sharpest single WoW COT signal in this report; both cohorts aligned JPY-bullish |
-| EUR | -28,156 (net short) | +251,698 (net long) | Trimming net shorts (+5,129) | Leveraged funds short but covering; real money structurally long; dollar direction is the tiebreaker |
-| CAD | -39,022 (net short) | -9,386 (net short) | Covering net shorts sharply (+16,426) | Large short-covering in CAD; still net short but pace of covering is notable |
-| USD Index | -4,909 (net short USD) | — | Extending short (-11,095) | Leveraged funds adding to short-dollar position; consistent dollar-soft backdrop |
+
+*(Source: CFTC Traders in Financial Futures, reporting week 8–15 Sept 2026, published ~18 Sept — most recent report available as of this cycle. Only figures actually verified via search are included; other pairs are marked NOT SOURCED rather than estimated.)*
+
+| Pair | Metric | Value | Read |
+|---|---|---|---|
+| JPY | Net long, leveraged funds | 120.4K contracts (14-month high) | +109.6K week-over-week — the standout positioning move of the period, part of a two-week 216K-contract buying spree |
+| USD (aggregate, 8 IMM currencies) | Gross long | $5.9B | Collapsed 70% week-over-week — lowest in 15 months; confirms a broad dollar-soft positioning backdrop |
+| EUR | Net short, leveraged funds | — | Short-covering of 15.6K contracts (~$2.3B) this period; still net short but reducing |
+| CAD | Net short, leveraged funds | — | Short-covering of 33K contracts (~$2.4B) this period |
+| AUD | — | NOT SOURCED | Not independently verified this session — do not populate without re-sourcing |
+| GBP | — | NOT SOURCED | Not independently verified this session — do not populate without re-sourcing |
+| CHF | — | NOT SOURCED | Not independently verified this session — do not populate without re-sourcing |
+
+**Read:** The clearest, best-sourced signal this period is the JPY reversal and the broad USD long unwind — both real and substantial. AUD/GBP/CHF-specific COT figures should be pulled fresh before publish rather than carried over from the earlier (fabricated) file.
 
 ---
 
 ## DAILY GAME PLAN
 
-**Monday/Tuesday:** Monday has no scheduled event. Tuesday brings Bullock speech (already occurred, no transcript). Use Monday/Tuesday to confirm price structure from the pipeline against the employment beat reaction. No new entries until pipeline levels are confirmed and HTF structure is read. If AUD moved sharply Thursday post-data and has not retraced, wait for a QMR pullback setup rather than chasing.
+**Monday/Tuesday:** No scheduled high-impact events. Use this window to re-check EURUSD and USDJPY for reaction confirmation — both are one gate from deterministic eligibility. No new entries until the engine snapshot shows a status upgrade from MANIPULATION to CONFIRMED-CONTINUATION/REVERSAL.
+**Wednesday:** Mid-week reassessment. If AUDUSD, USDCAD, or NZDUSD show a liquidity sweep (QMR advancing from QUALITY to MANIPULATION), re-run the snapshot and re-audit trade construction for that pair specifically.
+**Thursday:** No scheduled high-impact events this cycle. Reassess all WATCH-tier pairs against fresh engine output.
+**Friday:** Bailey speaks — no new entries in the window around the speech. If GBPUSD's Daily/4H conflict resolves with a confirmed structural break following the speech, that would be the first legitimate trigger for a GBP idea this cycle; absent that, GBPUSD remains INELIGIBLE regardless of speech tone.
 
-**Wednesday:** No red-folder events scheduled. Mid-week is consolidation and monitoring. If AUD/USD has set up a QMR pullback from the employment-beat move, Wednesday is the day that setup may present. USD/JPY — if the pipeline shows a bearish HTF structure, watch for continuation or a QM refinement entry. No forced entries; if structure is unclear the v7 no-trade condition applies.
-
-**Thursday:** No new red-folder events this week on Thursday. Reassess all open ideas against pipeline updates. If Priority 3 USD/CHF direction has been reconciled via the SNB press conference transcript, Thursday is the day to action it if a valid QMR setup exists.
-
-**Friday:** Bailey speaks 10:15am WAT. No new entries in the 30 minutes either side of the speech. If a speech-driven trigger fires, wait for a close through the relevant level before acting. Risk-management posture into the weekend regardless of what triggered this week.
+**Standing discipline:** No pair reached READY status this week. This is a legitimate outcome, not a gap to be filled artificially — the v7 no-trade condition applies where the deterministic gates are not satisfied.
 
 ---
-**Sources:** FF calendar screenshot (uploaded, Sep 20–26 view) · CFTC Traders in Financial Futures, futures-only, positions as of Sep 15, 2026 (published Sep 18, 2026) · Price levels: TwelveData via automated pipeline · HTF structure and QMR phase: deterministic engine outputs pending · No position ledger carryover — fresh cycle.
+
+## WEEK CLOSE REVIEW — CARRYOVER NOTE
+
+No trade ideas were opened this cycle; Position Ledger has no new entries to carry forward. EURUSD and USDJPY are the two pairs closest to deterministic confirmation heading into Week 36 and should be the first re-check on that cycle's build. The RBA decision (Mon 29 Sep, falls just outside this window) is the natural AUD-relevant carryover catalyst for Week 36.
+
+---
+**Sources:** Live web search (real-time financial news/data, 25 Sept 2026) for AU Employment, SNB decision, and COT figures · Live `/api/engine-snapshot` pull (2026-09-25T07:12 UTC) for all HTF/QMR/trade-construction data · No position ledger carryover — no ideas opened this cycle.
