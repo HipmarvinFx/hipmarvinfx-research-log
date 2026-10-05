@@ -1,6 +1,29 @@
 # HipMarvin FX — Open Position Ledger
 
-**Last Updated:** Friday, August 16, 2026, 18:31 UTC-4 (post-session close, Week 33 resolved)
+**Last Updated:** Monday, October 5, 2026 — baseline reset (previous update: Friday, August 16, 2026, 18:31 UTC-4, post-session close, Week 33 resolved)
+
+---
+
+## BASELINE RESET (2026-10-05)
+
+**Decision:** approved by Elijah Agom on 2026-10-05. Week 41 (2026-10-04 to 2026-10-10) is the first tracked week under the v7 schema.
+
+**Governing rule:**
+- Weeks 31-34 legacy rows with no sourced resolution carry the status `UNRECONCILED, pre-v7 baseline, excluded from tracking`.
+- No stop, target, outcome or closure is inferred for those rows. Entries, stops, targets and notes are unchanged; the last recorded status is kept inside the new status text.
+- Rows that already carry a sourced outcome (the two STOPPED rows below) are unchanged.
+- No position is carried into Week 41. The Week 41 open-position list starts empty.
+- From Week 41 onward every published idea enters this ledger with the full v7 tracking fields (Rule 17; see POSITION_LEDGER_TEMPLATE_v3.md) and later outcome evidence (Rule 3).
+
+**Rows set to the baseline status (6):** AUD/USD Long, EUR/USD Long, GBP/USD Long, XAU/USD Long (OPEN in the Aug 16 ledger); USD/CAD Short, USD/JPY Short (UNFILLED in the Aug 16 ledger).
+**Also unreconciled (not a table row):** NZD/USD Buy from Week 32, flagged as status unclear under Week 32 Carryover below. The ACTION note there is superseded by this baseline.
+**Historical only:** HANDOVER FOR WEEK 34 below is not carried into Week 41.
+
+**Inconsistencies in the Aug 16 ledger (recorded, not corrected):** (1) Aug 16, 2026 is a Sunday; the header and the Stopped table call it Friday. (2) The Stopped notes cite Mon Aug 12; Aug 12 is a Wednesday. (3) GBP/USD is shown as triggered Mon Aug 10 here; the Week 34 file says filled Wed Aug 12. (4) The floating-pip figures here differ from the Week 34 price strip. Nothing is corrected without a sourced record.
+
+**Status vocabulary:** `UNRECONCILED, pre-v7 baseline, excluded from tracking` is a new Status value, added deliberately for this reset; it is outside the 4-state schema (OPEN / STOPPED / CLOSED @TP / CLOSED @breakeven).
+
+**v7 tracking open positions (from Week 41):** none.
 
 ---
 
@@ -8,12 +31,12 @@
 
 | Pair | Direction | Entry | Entry Zone | Stop | Target 1 | Target 2 | Status | Notes |
 |------|-----------|-------|-----------|------|----------|----------|--------|-------|
-| AUD/USD | Long | 0.7085 | triggered Wed Aug 12 | 0.7040 | 0.7150 | n/a | OPEN — floating +0 pips from entry, no stop breach | Triggered on CPI-led dollar weakness; RBA hawkish hold Tue provided reinforcement; no target hit by Fri close; watch for week 34 continuation |
-| EUR/USD | Long | 1.1560 | triggered Wed Aug 12 | 1.1480 | 1.1650 | n/a | OPEN — floating +14 pips from entry, no stop breach | Triggered on CPI-led dollar weakness; no target hit by Fri close; stop intact |
-| GBP/USD | Long | 1.3500 | triggered Mon Aug 10 | 1.3420 | 1.3600 | n/a | OPEN — floating +24 pips from entry, no stop breach | Triggered on momentum Mon before catalyst; CPI Wed and UK GDP Thu both provided reinforcement; no target hit by Fri close; stop intact |
-| XAU/USD | Long | 4,360 | triggered Mon Aug 10 | 4,280 | 4,450 | n/a | OPEN — floating +16.695 pips from entry, no stop breach | Triggered on momentum Mon; CPI Wed provided reinforcement; no target hit by Fri close; stop intact |
-| USD/CAD | Short | 1.3980–1.4010 | entry zone (never filled) | 1.4070 | 1.3900 | 1.3850 | UNFILLED — price moved to 1.38731, now below entry zone approaching TP1; never triggered | Waited on pullback into entry zone; pullback never came; price has moved past entry zone without fill; monitor for re-entry on future pullback |
-| USD/JPY | Short | 159.00–159.40 | entry zone (never filled) | 160.60 | 157.50 | 156.00 | UNFILLED — price at 159.314, inside entry zone but no confirmed fill | Third consecutive week unfilled; current price within zone but pattern has been to move away from entry without hitting; monitor for clean breakout below 159.00 or pullback to zone high for confirmation |
+| AUD/USD | Long | 0.7085 | triggered Wed Aug 12 | 0.7040 | 0.7150 | n/a | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: OPEN — floating +0 pips from entry, no stop breach | Triggered on CPI-led dollar weakness; RBA hawkish hold Tue provided reinforcement; no target hit by Fri close; watch for week 34 continuation |
+| EUR/USD | Long | 1.1560 | triggered Wed Aug 12 | 1.1480 | 1.1650 | n/a | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: OPEN — floating +14 pips from entry, no stop breach | Triggered on CPI-led dollar weakness; no target hit by Fri close; stop intact |
+| GBP/USD | Long | 1.3500 | triggered Mon Aug 10 | 1.3420 | 1.3600 | n/a | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: OPEN — floating +24 pips from entry, no stop breach | Triggered on momentum Mon before catalyst; CPI Wed and UK GDP Thu both provided reinforcement; no target hit by Fri close; stop intact |
+| XAU/USD | Long | 4,360 | triggered Mon Aug 10 | 4,280 | 4,450 | n/a | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: OPEN — floating +16.695 pips from entry, no stop breach | Triggered on momentum Mon; CPI Wed provided reinforcement; no target hit by Fri close; stop intact |
+| USD/CAD | Short | 1.3980–1.4010 | entry zone (never filled) | 1.4070 | 1.3900 | 1.3850 | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: UNFILLED — price moved to 1.38731, now below entry zone approaching TP1; never triggered | Waited on pullback into entry zone; pullback never came; price has moved past entry zone without fill; monitor for re-entry on future pullback |
+| USD/JPY | Short | 159.00–159.40 | entry zone (never filled) | 160.60 | 157.50 | 156.00 | UNRECONCILED, pre-v7 baseline, excluded from tracking — last recorded in the Aug 16 ledger: UNFILLED — price at 159.314, inside entry zone but no confirmed fill | Third consecutive week unfilled; current price within zone but pattern has been to move away from entry without hitting; monitor for clean breakout below 159.00 or pullback to zone high for confirmation |
 
 ---
 
